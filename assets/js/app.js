@@ -39,7 +39,7 @@ let nameDsp = document.getElementById('fullname_dsp'),
     skillsDsp = document.getElementById('skills_dsp'),
     educationsDsp = document.getElementById('educations_dsp'),
     experiencesDsp = document.getElementById('experiences_dsp'),
-    careerDsp = document.getElementById('careerdsp');
+    careerDsp = document.getElementById('career_dsp');
 
 // first value is for the attributes and second one passes the nodelists
 const fetchValues = (attrs, ...nodeLists) => {
@@ -92,7 +92,7 @@ const getUserInputs = () => {
     let skillElem = document.querySelectorAll('.skill');
 
     //career Objectives
-    let careerElem = document.querySelectorAll('.career_obj')
+    let careerElem = document.querySelectorAll('.career-obj')
 
     // event listeners for form validation
     firstnameElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.TEXT, 'First Name'));
@@ -141,7 +141,7 @@ const getUserInputs = () => {
         educations: fetchValues(['edu_school', 'edu_degree', 'edu_city', 'edu_start_date', 'edu_graduation_date', 'edu_description'], eduSchoolElem, eduDegreeElem, eduCityElem, eduStartDateElem, eduGraduationDateElem, eduDescriptionElem),
         projects: fetchValues(['proj_title', 'proj_link', 'proj_description'], projTitleElem, projLinkElem, projDescriptionElem),
         skills: fetchValues(['skill'], skillElem),
-        career: fetchValues(['career_obj'], careerElem)
+        career: fetchValues(['career-obj'], careerElem)
     }
 };
 
@@ -189,6 +189,11 @@ function removeErrMsg(formElem){
 
 // show the list data
 const showListData = (listData, listContainer) => {
+    console.log('listContainer:', listContainer);
+    if (listContainer === null) {
+        console.error('listContainer is null. Check your selector or element existence.');
+        return;
+    }
     listContainer.innerHTML = "";
     listData.forEach(listItem => {
         let itemElem = document.createElement('div');
