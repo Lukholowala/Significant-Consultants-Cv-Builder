@@ -251,6 +251,8 @@
                                 <button type = "button" data-repeater-create value = "Add" class = "repeater-add-btn">+</button>
                             </div>
                         </div>
+                        
+                        
 
                         <div class="cv-form-blk">
                             <div class = "cv-form-row-title">
@@ -258,12 +260,12 @@
                             </div>
 
                             <div class = "row-separator repeater">
-                                <div class = "repeater" data-repeater-list = "group-e">
+                                <div class = "repeater" data-repeater-list = "group-g">
                                     <div data-repeater-item>
-                                        <div class = "cv-form-row cv-form-row-skills">
+                                        <div class = "cv-form-row cv-form-row-certifications">
                                             <div class = "form-elem">
-                                                <label for = "" class = "form-label"></label>
-                                                <input name = "skill" type = "text" class = "form-control skill" id = "" onkeyup="generateCV()" placeholder="List any relevant certifications or training programs you have completed, such as IT certifications, online courses, or workshops.">
+                                                <label for = "" class = "form-label">Certifications</label>
+                                                <input name = "certifications-qualifications" type = "text" class = "form-control certifications-qualifications" id = "" onkeyup="generateCV()" placeholder="List any relevant certifications or training programs you have completed, such as IT certifications, online courses, or workshops.">
                                                 <span class="form-text"></span>
                                             </div>
                                             
@@ -354,18 +356,20 @@
                             </div>
                         </div>
 
+                        
+
                         <div class="cv-form-blk">
                             <div class = "cv-form-row-title">
                                 <h3>interests & hobbies</h3>
                             </div>
 
                             <div class = "row-separator repeater">
-                                <div class = "repeater" data-repeater-list = "group-e">
+                                <div class = "repeater" data-repeater-list = "group-h">
                                     <div data-repeater-item>
-                                        <div class = "cv-form-row cv-form-row-skills">
+                                        <div class = "cv-form-row cv-form-row-interests">
                                             <div class = "form-elem">
                                                 <label for = "" class = "form-label"></label>
-                                                <input name = "skill" type = "text" class = "form-control skill" id = "" onkeyup="generateCV()" placeholder="If you have worked on personal IT projects or have relevant hobbies, mention them briefly.">
+                                                <input name = "interests-hob" type = "text" class = "form-control interests-hob" id = "" onkeyup="generateCV()" placeholder="If you have worked on personal IT projects or have relevant hobbies, mention them briefly.">
                                                 <span class="form-text"></span>
                                             </div>
                                             
@@ -482,7 +486,7 @@
                             <div class = "preview-blk-title">
                                 <h3>Certification and Qualification</h3>
                             </div>
-                            <div class = "educations-items preview-blk-list" id = "educations_dsp"></div>
+                            <div class = "certificstions-items preview-blk-list" id = "certifications_dsp"></div>
                         </div>
 
                         <div class = "preview-blk">
@@ -512,7 +516,7 @@
                             <div class = "preview-blk-title">
                                 <h3>interests and hobbies</h3>
                             </div>
-                            <div class = "educations-items preview-blk-list" id = "educations_dsp"></div>
+                            <div class = "educations-items preview-blk-list" id = "interestsDsp"></div>
                         </div>
 
                         <div class = "preview-blk">

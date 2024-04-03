@@ -39,7 +39,9 @@ let nameDsp = document.getElementById('fullname_dsp'),
     skillsDsp = document.getElementById('skills_dsp'),
     educationsDsp = document.getElementById('educations_dsp'),
     experiencesDsp = document.getElementById('experiences_dsp'),
-    careerDsp = document.getElementById('career_dsp');
+    careerDsp = document.getElementById('career_dsp'),
+    certificationsDsp = document.getElementById('certifications_dsp'),
+    interestsDsp = document.getElementById('interests_dsp');
 
 // first value is for the attributes and second one passes the nodelists
 const fetchValues = (attrs, ...nodeLists) => {
@@ -48,10 +50,11 @@ const fetchValues = (attrs, ...nodeLists) => {
     let tempDataArr = [];
 
     // first loop deals with the no of repeaters value
-    for(let i = 0; i < elemsDataCount; i++){
+    for (let i = 0; i < elemsDataCount; i++) {
         let dataObj = {}; // creating an empty object to fill the data
+
         // second loop fetches the data for each repeaters value or attributes 
-        for(let j = 0; j < elemsAttrsCount; j++){
+        for (let j = 0; j < elemsAttrsCount; j++) {
             // setting the key name for the object and fill it with data
             dataObj[`${attrs[j]}`] = nodeLists[j][i].value;
         }
@@ -92,7 +95,13 @@ const getUserInputs = () => {
     let skillElem = document.querySelectorAll('.skill');
 
     //career Objectives
-    let careerElem = document.querySelectorAll('.career-obj')
+    let careerElem = document.querySelectorAll('.career-obj');
+
+    //certifications & qualifications
+    let certificationsElem = document.querySelectorAll('.certications-qualifications');
+
+    //interests & hobbies
+    let interestsElem = document.querySelectorAll('.interests-hob');
 
     // event listeners for form validation
     firstnameElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.TEXT, 'First Name'));
@@ -124,7 +133,9 @@ const getUserInputs = () => {
 
     careerElem.forEach(item => item.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Objective')));
 
+    certificationsElem.forEach(item => item.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'certifications')));
     
+    interestsElem.forEach(item => item.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'interests')));
 
     
     return {
@@ -141,7 +152,9 @@ const getUserInputs = () => {
         educations: fetchValues(['edu_school', 'edu_degree', 'edu_city', 'edu_start_date', 'edu_graduation_date', 'edu_description'], eduSchoolElem, eduDegreeElem, eduCityElem, eduStartDateElem, eduGraduationDateElem, eduDescriptionElem),
         projects: fetchValues(['proj_title', 'proj_link', 'proj_description'], projTitleElem, projLinkElem, projDescriptionElem),
         skills: fetchValues(['skill'], skillElem),
-        career: fetchValues(['career-obj'], careerElem)
+        career: fetchValues(['career-obj'], careerElem),
+        certifications: fetchValues(['certifications-qualifications'], certificationsElem),
+        interests: fetchValues(['interests-hob'], interestsDsp)
     }
 };
 
@@ -223,6 +236,8 @@ const displayCV = (userData) => {
     showListData(userData.educations, educationsDsp);
     showListData(userData.experiences, experiencesDsp);
     showListData(userData.career, careerDsp);
+    showListData(userData.certifications, certificationsDsp);
+    showListData(userData.interests, interestsDsp);
 }
 
 // generate CV
