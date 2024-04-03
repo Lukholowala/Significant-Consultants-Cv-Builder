@@ -101,7 +101,10 @@ const getUserInputs = () => {
     let certificationsElem = document.querySelectorAll('.certications-qualifications');
 
     //interests & hobbies
-    let interestsElem = document.querySelectorAll('.interests-hob');
+    let interestsInput = document.querySelectorAll('.interests-hob');
+    interestsInput.forEach(input => {
+        input.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Interests'));
+    });
 
     // event listeners for form validation
     firstnameElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.TEXT, 'First Name'));
@@ -135,9 +138,6 @@ const getUserInputs = () => {
 
     certificationsElem.forEach(item => item.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'certifications')));
     
-    interestsElem.forEach(item => item.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'interests')));
-
-    
     return {
         firstname: firstnameElem.value,
         middlename: middlenameElem.value,
@@ -154,7 +154,7 @@ const getUserInputs = () => {
         skills: fetchValues(['skill'], skillElem),
         career: fetchValues(['career-obj'], careerElem),
         certifications: fetchValues(['certifications-qualifications'], certificationsElem),
-        interests: fetchValues(['interests-hob'], interestsDsp)
+        interests: fetchValues(['interests-hob'], interestsInput)
     }
 };
 
