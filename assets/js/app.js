@@ -41,7 +41,8 @@ let nameDsp = document.getElementById('fullname_dsp'),
     experiencesDsp = document.getElementById('experiences_dsp'),
     careerDsp = document.getElementById('career_dsp'),
     certificationsDsp = document.getElementById('certifications_dsp'),
-    interestsDsp = document.getElementById('interests_dsp');
+    interestsDsp = document.getElementById('interests_dsp'),
+    referencesDsp = document.getElementById('references_dsp');
 
 // first value is for the attributes and second one passes the nodelists
 const fetchValues = (attrs, ...nodeLists) => {
@@ -98,13 +99,24 @@ const getUserInputs = () => {
     let careerElem = document.querySelectorAll('.career-obj');
 
     //certifications & qualifications
-    let certificationsElem = document.querySelectorAll('.certications-qualifications');
+    let certificationsInput = document.querySelectorAll('.certifications-qualifications');
+    certificationsInput.forEach(input => {
+        input.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Certifications'));
+    });
+
 
     //interests & hobbies
     let interestsInput = document.querySelectorAll('.interests-hob');
     interestsInput.forEach(input => {
         input.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Interests'));
     });
+
+    let referenceNameInput = document.querySelectorAll('.nameSurname'),
+    
+
+        referencePhoneNumberInput = document.querySelectorAll('.phoneNumber'),
+        referenceRelationshipInput = document.querySelectorAll('.relationship');
+
 
     // event listeners for form validation
     firstnameElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.TEXT, 'First Name'));
@@ -136,7 +148,15 @@ const getUserInputs = () => {
 
     careerElem.forEach(item => item.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Objective')));
 
-    certificationsElem.forEach(item => item.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'certifications')));
+    referenceNameInput.forEach(input => {
+        input.addEventListener('keyup', (e) => validateFormData(e.target, validType.TEXT, 'name surname'));
+    });
+    referencePhoneNumberInput.forEach(input => {
+        input.addEventListener('keyup', (e) => validateFormData(e.target, validType.PHONENO, 'phone number'));
+    });
+    referenceRelationshipInput.forEach(input => {
+        input.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'relationship'));
+    });
     
     return {
         firstname: firstnameElem.value,
@@ -153,8 +173,9 @@ const getUserInputs = () => {
         projects: fetchValues(['proj_title', 'proj_link', 'proj_description'], projTitleElem, projLinkElem, projDescriptionElem),
         skills: fetchValues(['skill'], skillElem),
         career: fetchValues(['career-obj'], careerElem),
-        certifications: fetchValues(['certifications-qualifications'], certificationsElem),
-        interests: fetchValues(['interests-hob'], interestsInput)
+        certifications: fetchValues(['certifications-qualifications'], certificationsInput),
+        interests: fetchValues(['interests-hob'], interestsInput),
+        references: fetchValues(['nameSurname', 'phoneNumber', 'relationship'], referenceNameInput, referencePhoneNumberInput, referenceRelationshipInput)
     }
 };
 
@@ -238,6 +259,7 @@ const displayCV = (userData) => {
     showListData(userData.career, careerDsp);
     showListData(userData.certifications, certificationsDsp);
     showListData(userData.interests, interestsDsp);
+    showListData(userData.references, referencesDsp);
 }
 
 // generate CV

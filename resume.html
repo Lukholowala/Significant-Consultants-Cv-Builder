@@ -20,13 +20,7 @@
 
 
                         </a>
-                        <button type = "button" class = "navbar-toggler-btn">
-                            <div class = "bars">
-                                <div class = "bar"></div>
-                                <div class = "bar"></div>
-                                <div class = "bar"></div>
-                            </div>
-                        </button>
+                        
                     </div>
                 </div>
             </div>
@@ -232,6 +226,7 @@
                                                     <input name = "edu_start_date" type = "date" class = "form-control edu_start_date" id = "" onkeyup="generateCV()">
                                                     <span class="form-text"></span>
                                                 </div>
+
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">End Date</label>
                                                     <input name = "edu_graduation_date" type = "date" class = "form-control edu_graduation_date" id = "" onkeyup="generateCV()">
@@ -277,6 +272,8 @@
                             </div>
                         </div>
 
+                        
+
 
                         <div class="cv-form-blk">
                             <div class = "cv-form-row-title">
@@ -310,20 +307,22 @@
                                             <div class = "cols-3">
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">Development Languages & Technologies</label>
-                                                    <input name = "-proj_dev-language" type = "text" class = "form-control proj_dev-language" id = "" onkeyup="generateCV()" placeholder="">
+                                                    <input name = "proj_title" type = "text" class = "form-control proj_title" id = "" onkeyup="generateCV()">
                                                     <span class="form-text"></span>
                                                 </div>
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">Framework</label>
-                                                    <input name = "proj_framework" type = "text" class = "form-control proj_framework" id = "" onkeyup="generateCV()" placeholder="">
+                                                    <input name = "proj_link" type = "text" class = "form-control proj_link" id = "" onkeyup="generateCV()">
                                                     <span class="form-text"></span>
                                                 </div>
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">Project Highlights</label>
-                                                    <input name = "proj_highlights" type = "text" class = "form-control proj_highlights" id = "" onkeyup="generateCV()">
+                                                    <input name = "proj_description" type = "text" class = "form-control proj_description" id = "" onkeyup="generateCV()">
                                                     <span class="form-text"></span>
                                                 </div>
                                             </div>
+
+                                        
 
                                             <button data-repeater-delete type = "button" class = "repeater-remove-btn">-</button>
                                         </div>
@@ -385,23 +384,28 @@
                             </div>
 
                             <div class = "row-separator repeater">
+
+
                                 <div class = "repeater" data-repeater-list = "group-d">
                                     <div data-repeater-item>
-                                        <div class = "cv-form-row cv-form-row-experience">
+                                        <div class = " cv-form-row-experience">
+
+                                           
+
                                             <div class = "cols-3">
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">Name & Surname</label>
-                                                    <input name = "proj_title" type = "text" class = "form-control proj_title" id = "" onkeyup="generateCV()">
+                                                    <input name = "nameSurname" type = "text" class = "form-control nameSurname" id = "" onkeyup="generateCV()">
                                                     <span class="form-text"></span>
                                                 </div>
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">Phone Number</label>
-                                                    <input name = "proj_link" type = "text" class = "form-control proj_link" id = "" onkeyup="generateCV()">
+                                                    <input name = "phoneNumber" type = "text" class = "form-control phoneNumber" id = "" onkeyup="generateCV()">
                                                     <span class="form-text"></span>
                                                 </div>
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">Relationship</label>
-                                                    <input name = "proj_description" type = "text" class = "form-control proj_description" id = "" onkeyup="generateCV()">
+                                                    <input name = "relationship" type = "text" class = "form-control relationship" id = "" onkeyup="generateCV()">
                                                     <span class="form-text"></span>
                                                 </div>
                                             </div>
@@ -427,7 +431,7 @@
                                 <img src = "" alt = "" id = "image_dsp"> 
                             </div>
                             <div class = "preview-item preview-item-name">
-                                <span class = "preview-item-val fw-6" id = "fullname_dsp"></span>
+                               <span class = "preview-item-val fw-6" id = "fullname_dsp">
                             </div>
                             <div class = "preview-item">
                                 <span class = "preview-item-val text-uppercase fw-6 ls-1" id = "designation_dsp"></span>
@@ -486,7 +490,7 @@
                             <div class = "preview-blk-title">
                                 <h3>Certification and Qualification</h3>
                             </div>
-                            <div class = "certificstions-items preview-blk-list" id = "certifications_dsp"></div>
+                            <div class = "certifications-items preview-blk-list" id = "certifications_dsp"></div>
                         </div>
 
                         <div class = "preview-blk">
@@ -523,7 +527,7 @@
                             <div class="preview-blk-title">
                                 <h3>references</h3>
                             </div>
-                            <div class="references-items preview-blk-list" id="references_dsp"></div>
+                            <div class="projects-items preview-blk-list" id="references_dsp"></div>
                         </div>
 
                     </div>
