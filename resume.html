@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- custom css -->
         <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <nav class = "navbar bg-white">
@@ -70,6 +71,8 @@
                                     </div>
                                 </div>
 
+                
+
                                 <div class = "cols-3">
                                     <div class = "form-elem">
                                         <label for = "" class = "form-label">Email</label>
@@ -77,9 +80,14 @@
                                         <span class="form-text"></span>
                                     </div>
                                     <div class = "form-elem">
-                                        <label for = "" class = "form-label">Phone No:</label>
+                                        <div class="label-icon">
+                                            <i class="fa fa-phone"></i>
+                                            <label for = "" class = "form-label">Phone No:</label>
+                                        </div>
+                                        
                                         <input name = "phoneno" type = "text" class = "form-control phoneno" id = "" onkeyup="generateCV()" placeholder="">
                                         <span class="form-text"></span>
+                                        
                                     </div>
                                     <div class = "form-elem">
                                         <label for = "" class = "form-label">LinkedIn</label>
@@ -284,19 +292,27 @@
                                 <div class = "repeater" data-repeater-list = "group-g">
                                     <div data-repeater-item>
                                         <div class = "cv-form-row cv-form-row-projects">
-                                            <div class = "cols-3">
+
+                                            
+
+                                            <div class = "cols-1">
+
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">Project Title</label>
-                                                    <input name = "proj_title" type = "text" class = "form-control proj_title" id = "" onkeyup="generateCV()" placeholder="">
+                                                    <input name = "proj_title" type = "text" class = "form-control proj_title" id = "" onkeyup="generateCV()">
                                                     <span class="form-text"></span>
                                                 </div>
-                                                
+                                            </div>
+
+                                            <div class="cols-1">
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">Description</label>
                                                     <input name = "proj_description" type = "text" class = "form-control proj_description" id = "" onkeyup="generateCV()" placeholder="">
                                                     <span class="form-text"></span>
                                                 </div>
+                                            </div>
 
+                                            <div class="cols-1">
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">Your Role</label>
                                                     <input name = "proj_link" type = "text" class = "form-control proj_link" id = "" onkeyup="generateCV()" placeholder="">
@@ -304,22 +320,40 @@
                                                 </div>
                                             </div>
 
-                                            <div class = "cols-3">
+                                            <div class="cols-1">
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">Development Languages & Technologies</label>
                                                     <input name = "proj_title" type = "text" class = "form-control proj_title" id = "" onkeyup="generateCV()">
                                                     <span class="form-text"></span>
                                                 </div>
+                                            </div>
+
+                                            <div class="cols-1">
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">Framework</label>
                                                     <input name = "proj_link" type = "text" class = "form-control proj_link" id = "" onkeyup="generateCV()">
                                                     <span class="form-text"></span>
                                                 </div>
+                                            </div>
+                                            
+                                            <div class="cols-1">
                                                 <div class = "form-elem">
                                                     <label for = "" class = "form-label">Project Highlights</label>
                                                     <input name = "proj_description" type = "text" class = "form-control proj_description" id = "" onkeyup="generateCV()">
                                                     <span class="form-text"></span>
                                                 </div>
+
+
+                                            </div>   
+                                            
+                                            <div class="cols-3">
+                                                
+                                            </div>
+                                                
+                                            
+
+                                            <div class = "cols-3">
+                                                
                                             </div>
 
                                         
@@ -424,44 +458,61 @@
 
         <section id = "preview-sc" class = "print_area">
             <div class = "container">
-                <div class = "preview-cnt">
-                    <div class = "preview-cnt-l bg-green text-white">
-                        <div class = "preview-blk">
-                            <div class = "preview-image">
-                                <img src = "" alt = "" id = "image_dsp"> 
-                            </div>
-                            <div class = "preview-item preview-item-name">
-                               <span class = "preview-item-val fw-6" id = "fullname_dsp">
-                            </div>
-                            <div class = "preview-item">
-                                <span class = "preview-item-val text-uppercase fw-6 ls-1" id = "designation_dsp"></span>
-                            </div>
-                        </div>
 
-                        <div class = "preview-blk">
-                            <div class = "preview-blk-title">
-                                <h3></h3>
-                            </div>
-                            <div class = "preview-blk-list">
-                                <div class = "preview-item">
-                                    <span class = "preview-item-val" id = "phoneno_dsp"></span>
-                                </div>
-                                <div class = "preview-item">
-                                    <span class = "preview-item-val" id = "email_dsp"></span>
-                                </div>
-                                <div class = "preview-item">
-                                    <span class = "preview-item-val" id = "address_dsp"></span>
-                                </div>
-                                <div class = "preview-item">
-                                    <span class = "preview-item-val" id = "summary_dsp"></span>
-                                </div>
-                            </div>
-                        </div>
+                <div class = "preview-cnt-l bg-green text-white">
+                    <div class = "preview-blk" class="cols-2">
+                       
 
                         
+                        <div class="preview-personal-details">
+                            <div class = "preview-blk-title" >
+                                <div class = "preview-image">
+                                    <img src = "" alt = "" id = "image_dsp"> 
+                                </div>
+                                <div class = "preview-item preview-item-name">
+                                <span class = "preview-item-val fw-6" id = "fullname_dsp">
+                                </div>
+                                <div class = "preview-item">
+                                    <span class = "preview-item-val text-uppercase fw-6 ls-1" id = "designation_dsp"></span>
+                                </div>
+                                <h3></h3>
+                            </div>
+                        </div>
+                        <div class = "preview-item-details">
+                            <div class = "preview-item">
+                                <i class="fa fa-phone"></i>
+                                <span class = "preview-item-val fw-6 ls-1" id = "phoneno_dsp"></span>
+                            </div>
+                            <div class = "preview-item">
+                                
+                                    
+                                
+                                <i class="fa fa-envelope"></i>
+                                <span class = "preview-item-val fw-6 ls-1" id = "email_dsp"></span>
+                            </div>
+                            <div class = "preview-item">
+                                <i class="fa fa-map-marker"></i>
+                                <span class = "preview-item-val fw-6 ls-1" id = "address_dsp"></span>
+                            </div>
+                            <div class = "preview-item">
+                                <i class="fa fa-linkedin-square"></i>
+                                <span class = "preview-item-val fw-6 ls-1" id = "summary_dsp"></span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class = "preview-cnt-r bg-white">
+                    
+
+                    
+                </div> 
+
+                <div class = "preview-cnt-r">
+                   
+
+                    <div class = "bg-white">
+
+                        
+                        
 
                         <div class = "preview-blk">
                             <div class = "preview-blk-title">

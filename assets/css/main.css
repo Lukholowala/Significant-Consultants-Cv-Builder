@@ -17,7 +17,7 @@
 
 *{
     padding: 0;
-    margin: 0;
+    margin: 2px;
     box-sizing: border-box;
 }
 
@@ -402,7 +402,7 @@ textarea{
     left: 0;
     width: 100%;
 }
-.cols-3, .cols-2{
+.cols-3, .cols-2, .cols-1{
     display: grid;
 }
 .repeater-add-btn{
@@ -443,6 +443,7 @@ textarea{
 }
 .preview-cnt-l .preview-blk:nth-child(1){
     text-align: center;
+    display: block;
 }
 .preview-image{
     width: 120px;
@@ -482,14 +483,18 @@ textarea{
     letter-spacing: 0.5px;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
     padding-bottom: 0.5rem;
+    text-align: center;
 }
 .preview-blk-title{
     margin-bottom: 1rem;
+
 }
 .preview-blk-list .preview-item{
     font-size: 1.5rem;
     margin-bottom: 0.2rem;
     opacity: 0.95;
+    display: block;
+
 }
 .preview-cnt-r .preview-blk-title{
     color: var(--clr-dark);
@@ -498,9 +503,14 @@ textarea{
     margin-top: 1.8rem;
 }
 
+#references_dsp{
+    list-style: disc;
+}
+
 .achievements-items.preview-blk-list .preview-item span:first-child,
 .educations-items.preview-blk-list .preview-item span:first-child,
-.experiences-items.preview-blk-list .preview-item span:first-child{
+.experiences-items.preview-blk-list .preview-item span:first-child,
+.projects-items.preview-blk-list .preview-item span:first-child{
     display: block;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -541,6 +551,27 @@ textarea{
     display: block;
 }
 
+.preview-personal-details{
+    display: block;
+}
+
+.preview-item-details{
+    
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    opacity: 0.95;
+    display: inline-flex;
+}
+
+.contacts-details{
+    
+    align-items: flex-end;
+}
+
+.label-icon{
+    display: flex;
+    flex-direction: row;
+}
 @media screen and (min-width: 768px){
     .cols-3{
         grid-template-columns: repeat(3, 1fr);

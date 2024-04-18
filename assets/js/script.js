@@ -2,6 +2,8 @@
 
 // form repeater
 $(document).ready(function(){
+    var counter = 1; // Initialize counter
+
     $('.repeater').repeater({
         initEmpty: false,
         defaultValues: {
@@ -9,6 +11,8 @@ $(document).ready(function(){
         },
         show:function(){
             $(this).slideDown();
+            $(this).find('.text-input').attr('placeholder', 'Input ' + counter);
+            counter++; // Increment counter
         },
         hide: function(deleteElement){
             $(this).slideUp(deleteElement);
