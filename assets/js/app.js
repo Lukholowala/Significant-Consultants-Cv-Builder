@@ -1,5 +1,5 @@
 // regex for validation
-const strRegex =  /^[a-zA-Z\s]*$/; // containing only letters
+const strRegex = /^[a-zA-Z\s]*$/; // containing only letters
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 /* supports following number formats - (123) 456-7890, (123)456-7890, 123-456-7890, 123.456.7890, 1234567890, +31636363634, 075-63546725 */
@@ -69,28 +69,28 @@ const getUserInputs = () => {
 
     // achivements 
     let achievementsTitleElem = document.querySelectorAll('.achieve_title'),
-    achievementsDescriptionElem = document.querySelectorAll('.achieve_description');
+        achievementsDescriptionElem = document.querySelectorAll('.achieve_description');
 
     // experiences
     let expTitleElem = document.querySelectorAll('.exp_title'),
-    expOrganizationElem = document.querySelectorAll('.exp_organization'),
-    expLocationElem = document.querySelectorAll('.exp_location'),
-    expStartDateElem = document.querySelectorAll('.exp_start_date'),
-    expEndDateElem = document.querySelectorAll('.exp_end_date'),
-    expDescriptionElem = document.querySelectorAll('.exp_description');
+        expOrganizationElem = document.querySelectorAll('.exp_organization'),
+        expLocationElem = document.querySelectorAll('.exp_location'),
+        expStartDateElem = document.querySelectorAll('.exp_start_date'),
+        expEndDateElem = document.querySelectorAll('.exp_end_date'),
+        expDescriptionElem = document.querySelectorAll('.exp_description');
 
     // education
     let eduSchoolElem = document.querySelectorAll('.edu_school'),
-    eduDegreeElem = document.querySelectorAll('.edu_degree'),
-    eduCityElem = document.querySelectorAll('.edu_city'),
-    eduStartDateElem = document.querySelectorAll('.edu_start_date'),
-    eduGraduationDateElem = document.querySelectorAll('.edu_graduation_date'),
-    eduDescriptionElem = document.querySelectorAll('.edu_description');
+        eduDegreeElem = document.querySelectorAll('.edu_degree'),
+        eduCityElem = document.querySelectorAll('.edu_city'),
+        eduStartDateElem = document.querySelectorAll('.edu_start_date'),
+        eduGraduationDateElem = document.querySelectorAll('.edu_graduation_date'),
+        eduDescriptionElem = document.querySelectorAll('.edu_description');
 
     //projects
     let projTitleElem = document.querySelectorAll('.proj_title'),
-    projLinkElem = document.querySelectorAll('.proj_link'),
-    projDescriptionElem = document.querySelectorAll('.proj_description');
+        projLinkElem = document.querySelectorAll('.proj_link'),
+        projDescriptionElem = document.querySelectorAll('.proj_description');
 
     //skills
     let skillElem = document.querySelectorAll('.skill');
@@ -112,7 +112,7 @@ const getUserInputs = () => {
     });
 
     let referenceNameInput = document.querySelectorAll('.nameSurname'),
-    
+
 
         referencePhoneNumberInput = document.querySelectorAll('.phoneNumber'),
         referenceRelationshipInput = document.querySelectorAll('.relationship');
@@ -157,7 +157,7 @@ const getUserInputs = () => {
     referenceRelationshipInput.forEach(input => {
         input.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'relationship'));
     });
-    
+
     return {
         firstname: firstnameElem.value,
         middlename: middlenameElem.value,
@@ -179,45 +179,45 @@ const getUserInputs = () => {
     }
 };
 
-function validateFormData(elem, elemType, elemName){
+function validateFormData(elem, elemType, elemName) {
     // checking for text string and non empty string
-    if(elemType == validType.TEXT){
-        if(!strRegex.test(elem.value) || elem.value.trim().length == 0) addErrMsg(elem, elemName);
+    if (elemType == validType.TEXT) {
+        if (!strRegex.test(elem.value) || elem.value.trim().length == 0) addErrMsg(elem, elemName);
         else removeErrMsg(elem);
     }
 
     // checking for only text string
-    if(elemType == validType.TEXT_EMP){
-        if(!strRegex.test(elem.value)) addErrMsg(elem, elemName);
+    if (elemType == validType.TEXT_EMP) {
+        if (!strRegex.test(elem.value)) addErrMsg(elem, elemName);
         else removeErrMsg(elem);
     }
 
     // checking for email
-    if(elemType == validType.EMAIL){
-        if(!emailRegex.test(elem.value) || elem.value.trim().length == 0) addErrMsg(elem, elemName);
+    if (elemType == validType.EMAIL) {
+        if (!emailRegex.test(elem.value) || elem.value.trim().length == 0) addErrMsg(elem, elemName);
         else removeErrMsg(elem);
     }
 
     // checking for phone number
-    if(elemType == validType.PHONENO){
-        if(!phoneRegex.test(elem.value) || elem.value.trim().length == 0) addErrMsg(elem, elemName);
+    if (elemType == validType.PHONENO) {
+        if (!phoneRegex.test(elem.value) || elem.value.trim().length == 0) addErrMsg(elem, elemName);
         else removeErrMsg(elem);
     }
 
     // checking for only empty
-    if(elemType == validType.ANY){
-        if(elem.value.trim().length == 0) addErrMsg(elem, elemName);
+    if (elemType == validType.ANY) {
+        if (elem.value.trim().length == 0) addErrMsg(elem, elemName);
         else removeErrMsg(elem);
     }
 }
 
 // adding the invalid text
-function addErrMsg(formElem, formElemName){
+function addErrMsg(formElem, formElemName) {
     formElem.nextElementSibling.innerHTML = `${formElemName} is invalid`;
 }
 
 // removing the invalid text 
-function removeErrMsg(formElem){
+function removeErrMsg(formElem) {
     formElem.nextElementSibling.innerHTML = "";
 }
 
@@ -232,8 +232,8 @@ const showListData = (listData, listContainer) => {
     listData.forEach(listItem => {
         let itemElem = document.createElement('div');
         itemElem.classList.add('preview-item');
-        
-        for(const key in listItem){
+
+        for (const key in listItem) {
             let subItemElem = document.createElement('span');
             subItemElem.classList.add('preview-item-val');
             subItemElem.innerHTML = `${listItem[key]}`;
@@ -243,6 +243,40 @@ const showListData = (listData, listContainer) => {
         listContainer.appendChild(itemElem);
     })
 }
+
+const showReferencesData = (referencesData, referencesContainer) => {
+    if (referencesContainer === null) {
+        console.error('referencesContainer is null. Check your selector or element existence.');
+        return;
+    }
+    referencesContainer.innerHTML = "";
+    let referencesRow = document.createElement('div');
+    referencesRow.classList.add('references-row');
+    referencesData.forEach((reference, index) => {
+        let referenceItem = document.createElement('div');
+        referenceItem.classList.add('reference-item');
+        let referenceNumber = document.createElement('span');
+        referenceNumber.classList.add('reference-number');
+        referenceNumber.textContent = `${index + 1}. `;
+        referenceItem.appendChild(referenceNumber);
+
+        let referenceDetails = document.createElement('span');
+        referenceDetails.classList.add('reference-details');
+        let detailsText = '';
+        for (const key in reference) {
+            detailsText += `${reference[key]} `;
+        }
+        referenceDetails.textContent = detailsText.trim();
+        referenceItem.appendChild(referenceDetails);
+        referencesRow.appendChild(referenceItem);
+    });
+    referencesContainer.appendChild(referencesRow);
+}
+
+
+
+
+
 
 const displayCV = (userData) => {
     nameDsp.innerHTML = userData.firstname + " " + userData.middlename + " " + userData.lastname;
@@ -266,18 +300,20 @@ const displayCV = (userData) => {
 const generateCV = () => {
     let userData = getUserInputs();
     displayCV(userData);
+    showReferencesData(userData.references, referencesDsp);
     console.log(userData);
 }
 
-function previewImage(){
+function previewImage() {
     let oFReader = new FileReader();
     oFReader.readAsDataURL(imageElem.files[0]);
-    oFReader.onload = function(ofEvent){
+    oFReader.onload = function (ofEvent) {
         imageDsp.src = ofEvent.target.result;
     }
 }
-
+showReferencesData(userData.references, referencesDsp);
+generateCV();
 // print CV
-function printCV(){
+function printCV() {
     window.print();
 }
